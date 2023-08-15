@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景图片问题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="bgimg"></div>
+
+    <script src="./index.js"></script>
+    <script>
+        let MybgImg = new MiddleBg({
+            id: 'bgimg',
+            imgsrc: 'http://192.168.1.2:8848'
+        })
+
+        MybgImg.bgRender();
+    </script>
+</body>
+
+</html>
