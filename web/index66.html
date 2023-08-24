@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Click</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            display: none;
+            margin: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button id="button1">按钮1</button>
+    <button id="button2">按钮2</button>
+
+    <div id="box1" class="box">方框1</div>
+    <div id="box2" class="box">方框2</div>
+
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+
+        document.getElementById('button1').onclick = function(event) {
+            box1.style.display = 'block';
+            box2.style.display = 'none';
+            event.stopPropagation();
+        }
+
+        document.getElementById('button2').onclick = function(event) {
+            box2.style.display = 'block';
+            box1.style.display = 'none';
+            event.stopPropagation();
+        }
+
+        box1.onclick = function(event) {
+            event.stopPropagation();
+        }
+
+        box2.onclick = function(event) {
+            event.stopPropagation();
+        }
+
+        document.onclick = function() {
+            box1.style.display = 'none';
+            box2.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

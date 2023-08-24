@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>AlinNode</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin: 0 auto;
+            font-size: 40px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+            font-size: 30px;
+        }
+
+
+        img.context {
+            opacity: 0.5;
+            width: 100%;
+            position: fixed;
+            z-index: -1
+        }
+
+
+
+
+        #example {
+            border: none;
+            /* 改为固定定位 */
+            top: 6%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(15, 227, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 40px;
+            padding: 4.5%;
+            width: 75%;
+            height: 4%;
+            position: absolute;
+            z-index: 5;
+        }
+
+        #example1 {
+            position: fixed;
+            top: 22%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 255, 17, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 7%;
+            width: 25%;
+            height: 4%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 4;
+        }
+
+
+
+        #example2 {
+            position: absolute;
+            /* 改为固定定位 */
+            top: 42%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 234, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 7%;
+            width: 25%;
+            height: 4%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+
+            z-index: 3;
+        }
+
+        #example3 {
+
+            box-shadow: 10px 10px rgb(0, 0, 0);
+
+            position: fixed;
+            /* 改为固定定位 */
+            top: 62%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 25, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 7%;
+            width: 25%;
+            height: 4%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 2;
+        }
+
+        #example4 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 82%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(166, 0, 232, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 7%;
+            width: 25%;
+            height: 4%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 1;
+        }
+
+        #example5 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 95%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(117, 107, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 3%;
+            width: 33%;
+            height: 2%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 0;
+        }
+
+        /**/
+
+        .box {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 70%;
+            height: 80%;
+            border-radius: 55px;
+            background:
+                linear-gradient(rgb(255, 202, 202),
+                    rgb(175, 255, 180),
+                    rgb(175, 234, 255),
+                    rgb(254, 175, 255));
+
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            overflow: auto;
+            /* 向左上方移动一半的宽度和高度 */
+            box-shadow: 0px 0px 600px 40px rgb(39, 39, 39);
+
+        }
+
+        .box1 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 70%;
+            height: 80%;
+            border-radius: 55px;
+            background: linear-gradient(rgb(215, 255, 222), rgb(173, 233, 255));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 600px 40px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+        }
+
+        .box2 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 70%;
+            height: 80%;
+            border-radius: 55px;
+            background: linear-gradient(rgb(255, 254, 202), rgb(153, 255, 152));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 6000px 40px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+        }
+
+        .box3 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 70%;
+            height: 80%;
+            border-radius: 55px;
+            background: linear-gradient(rgb(255, 202, 202), rgb(255, 253, 152));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 1000px 80px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+        }
+
+        .box4 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 70%;
+            height: auto;
+            border-radius: 55px;
+            background: linear-gradient(rgb(208, 202, 255), rgb(255, 168, 168));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 800px 80px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+        }
+
+        .box5 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 70%;
+            height: auto;
+            border-radius: 55px;
+            background: linear-gradient(rgb(189, 165, 255), rgb(200, 238, 255));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 800px 80px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+        }
+
+
+
+
+        /* 定义文本内容的样式 */
+        #content {
+            text-align: center;
+            /* 设置为居中对齐 */
+            margin: auto;
+            /* 设置为自动边距 */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img class="context" src="http://192.168.1.2:8848" alt="Image">
+
+    
+    <div id="example">
+        <h1>“爱丽丝”介绍</h1>
+    </div>
+
+    <div id="boxs" class="box">
+        <h2>
+            <br>
+            <br>
+            Alin-Robot是基于koishi机器人架构的QQ机器人
+        </h2>
+    </div>
+
+
+
+    <div id="example1">
+        <h1 {text-align:center;}>入群须知</h1>
+    </div>
+    <div id="boxs1" class="box1">
+        <h2>
+            7777
+        </h2>
+    </div>
+
+
+
+    <div id="example2">
+        <h1 {text-align:center;}>VITS语音合成</h1>
+    </div>
+    <div id="boxs2" class="box2">
+        <h2>
+            88888
+        </h2>
+    </div>
+
+
+
+    <div id="example3">
+        <h1 {text-align:center;}>GPT AI对话</h1>
+    </div>
+    <div id="boxs3" class="box3">
+        <h2>
+            99999
+        </h2>
+    </div>
+
+
+
+    <div id="example4">
+        <h1 {text-align:center;}>赞助</h1>
+    </div>
+    <div id="boxs4" class="box4">
+        <h2>
+            目前接受爱发电的赞助
+            <br>
+            爱丽丝是开源免费的，使用不需要付费
+            <br>
+            感谢大家的赞助！
+            <br>
+            <img src="afdian-Alin.jpg" width="304" height="410">
+            <br>
+            <a href="https://afdian.net/a/alin-sky" target=“_blank”>爱发电链接</a>
+            <br>
+
+        </h2>
+    </div>
+
+
+
+
+    <div id="example5">
+        <h1 {text-align:center;}>其他</h1>
+    </div>
+    <div id="boxs5" class="box5">
+        <h2>
+            施工中
+            <br>
+            施工中
+            <br>
+            施工中
+            <br>
+            🚮🚮🚮
+            <br>
+            🛠️🛠️🛠️
+            <br>
+            🛠️🛠️🛠️
+            <br>
+            🛠️🛠️🛠️
+        </h2>
+    </div>
+
+
+    <a href="https://github.com/Alin-sky/AlinNode" target=“_blank”>
+        <img style="position: absolute; bottom: 50px; right: 10px;" 
+        src="https://pngimg.com/uploads/github/github_PNG40.png"width="60" height="60"
+        alt="Fork me on GitHub" >
+        </a>
+    <div style="position: absolute; bottom: 10px; right: 10px;"><h3>AlinNode-V0.1beta</div>
+
+
+</body>
+<script>
+
+    var boxs = document.getElementById('boxs');
+    var boxs1 = document.getElementById('boxs1');
+    document.getElementById('example').onclick = function (event) {
+        boxs.style.display = 'block';//ooooooooooo
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        boxs5.style.display = 'none';
+        event.stopPropagation();
+    }
+    document.getElementById('example1').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'block';//ooooooooooo
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        boxs5.style.display = 'none';
+        event.stopPropagation();
+    }
+    document.getElementById('example2').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'block';//ooooooooooo
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        boxs5.style.display = 'none';
+        event.stopPropagation();
+    }
+    document.getElementById('example3').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'block';//ooooooooooo
+        boxs4.style.display = 'none';
+        boxs5.style.display = 'none';
+        event.stopPropagation();
+    }
+    document.getElementById('example4').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'block';//ooooooooooo
+        event.stopPropagation();
+    }
+    document.getElementById('example5').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        boxs5.style.display = 'block';//ooooooooooo
+        event.stopPropagation();
+    }
+
+
+    boxs.onclick = function (event) {
+        event.stopPropagation();
+    }
+    document.onclick = function () {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        boxs5.style.display = 'none';
+    }
+
+</script>

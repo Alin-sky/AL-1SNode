@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>AlinNode</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin: auto;
+        }
+
+        img {
+            opacity: 0.5;
+            width: 100%;
+            position: fixed;
+            z-index: -1
+        }
+
+
+        #example {
+
+            border: none;
+            /* 改为固定定位 */
+            top: 5%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(15, 227, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 5%;
+            width: 75%;
+            height: 3%;
+            position: absolute;
+            z-index: 5;
+        }
+
+        #example1 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 20%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 255, 17, 0.2);
+            -webkit-backdrop-filter: blur(80px);
+            backdrop-filter: blur(10px);
+            border-radius: 55px;
+            padding: 7%;
+            width: 25%;
+            height: 4%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 4;
+        }
+
+        #example2 {
+            position: absolute;
+            /* 改为固定定位 */
+            top: 40%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 234, 0, 0.2);
+            -webkit-backdrop-filter: blur(80px);
+            backdrop-filter: blur(10px);
+            border-radius: 55px;
+            padding: 7%;
+            width: 25%;
+            height: 4%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+
+            z-index: 3;
+        }
+
+        #example3 {
+
+            box-shadow: 10px 10px rgb(0, 0, 0);
+
+            position: fixed;
+            /* 改为固定定位 */
+            top: 60%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 25, 0, 0.2);
+            -webkit-backdrop-filter: blur(80px);
+            backdrop-filter: blur(10px);
+            border-radius: 55px;
+            padding: 7%;
+            width: 25%;
+            height: 4%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 2;
+        }
+
+        #example4 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 80%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(166, 0, 232, 0.2);
+            -webkit-backdrop-filter: blur(80px);
+            backdrop-filter: blur(10px);
+            border-radius: 55px;
+            padding: 7%;
+            width: 25%;
+            height: 4%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 1;
+        }
+
+        #example5 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 95%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(117, 107, 255, 0.2);
+            -webkit-backdrop-filter: blur(80px);
+            backdrop-filter: blur(10px);
+            border-radius: 55px;
+            padding: 4%;
+            width: 15%;
+            height: 2%;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+
+            z-index: 0;
+        }
+
+
+
+
+        /**/
+
+        #box {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 70%;
+            height: 80%;
+            border-radius: 55px;
+            background-color: rgb(227, 255, 224);
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            overflow: auto;
+
+            /* 向左上方移动一半的宽度和高度 */
+        }
+
+        #box1 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 70%;
+            height: 80%;
+            border-radius: 55px;
+            background-color: rgb(0, 0, 0);
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+
+            /* 向左上方移动一半的宽度和高度 */
+        }
+
+
+
+        /* 定义文本内容的样式 */
+        #content {
+            text-align: center;
+            /* 设置为居中对齐 */
+            margin: auto;
+            /* 设置为自动边距 */
+        }
+
+        /* 定义一个返回按钮 */
+        /* 定义一个圆形 */
+        .circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50px;
+            background-color: rgb(255, 91, 91);
+            position: fixed;
+            top: -2%;
+            left: -3%;
+        }
+
+        /* 定义一个叉 */
+        .cross {
+            width: 8px;
+            height: 60px;
+            background-color: rgb(35, 35, 35);
+            position: fixed;
+            top: -1%;
+            left: 0.5%;
+
+            transform: rotate(45deg);
+
+
+        }
+
+        /* 定义叉的另一半 */
+        .cross::after {
+            content: "";
+            width: 8px;
+            height: 60px;
+            background-color: rgb(35, 35, 35);
+            position: fixed;
+            top: -1%;
+            left: 0.5%;
+
+            transform: rotate(90deg);
+        }
+
+        /* 定义关闭按钮样式 */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var clicked = false;
+        function showBox() {
+            if (!clicked) {
+                document.getElementById('box').style.display = 'block';
+                clicked = true;
+                localStorage.setItem('clicked', 'true');
+            }
+        }
+        if (localStorage.getItem('clicked') === 'true') {
+            document.getElementById('box').style.display = 'block';
+            clicked = true;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 创建一个div元素作为遮罩层，并添加点击事件 -->
+
+
+    <img src="http://192.168.1.2:8848" alt="Image">
+    <br><br />
+
+
+
+    <button id="example" onclick="showBox()">
+        <h1 class="text-align: center">“爱丽丝”介绍</h1>
+    </button>
+
+    <div id="myModal1">
+        <div id="box" class="box">
+            <span class="close" 
+            onclick="document.getElementById('myModal1').style.display='none'">&times;</span>
+            <p id="content">
+            <h2>
+                <br>
+                <div class="back-button">
+
+                    <br>
+                    目前alin有三个bot
+                    <br>
+                    爱丽丝一号（群头衔：一号机）
+                    <br>
+                    爱丽丝二号（群头衔：二号机）
+                    <br>
+                    key酱（群头衔：key酱）
+                    <br>
+                    如果群组只需要ba功能请优先考虑key酱
+                    <br>
+                    key酱只有ba功能
+                    <br>
+                    一号机不再接受入群申请
+                    <br>
+                    二号机一天可以接受三个群聊的入群申请
+                    <br>
+                    非ba群恕不接受入群
+                    <br>
+                    <br>
+                    <br>
+                    入群申请
+                    <br>
+                    1.请@alin或创建和alin的临时会话
+                    <br>
+                    2.发送群号
+                    <br>
+                    3.并说明是需要二号机还是key酱
+                    <br>
+                    alin是部署者，群头衔alin的那位
+                    <br>
+                    其他还有一些群u搭建的bot，如果想拉请联系部署者
+            </h2>
+            </p>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="example1">
+        <h1 {text-align:center;}>入群须知</h1>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="example2" onclick="showAlert2()">
+        <h1 {text-align:center;}>VITS语音合成</h1>
+    </div>
+    <div id="box1">
+        <p id="content">
+        <h2>
+            <br>
+            <br>
+            目前alin有三个bot
+            <br>
+            爱丽丝一号（群头衔：一号机）
+            <br>
+            <div class="back-button" onclick="closeAlert2()"></div>
+            <div class="circle" onclick="closeAlert2()">
+                <!-- 在圆形内添加一个叉 -->
+                <div class="cross"></div>
+
+        </h2>
+        </p>
+    </div>
+
+
+    <div id="example3">
+        <h1 {text-align:center;}>GPT AI对话</h1>
+    </div>
+
+    <div id="example4">
+        <h1 {text-align:center;}>赞助</h1>
+    </div>
+
+    <div id="example5">
+        <h1 {text-align:center;}>其他</h1>
+    </div>
+
+
+</body>
