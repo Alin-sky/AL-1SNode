@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>AL-1S-Tool</title>
+    <link rel="icon" href="/data/als.ico" type="image/x-icon">
+    <style>
+        body {
+            background: linear-gradient(to right bottom, rgb(255, 255, 140), rgb(119, 248, 255));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        h1 {
+            text-align: center;
+            margin: 0 auto;
+            font-size: 40px;
+        }
+
+        img {
+            text-align: center;
+        }
+
+        img {
+            border: 10px solic #000000;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .message {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .bubble-left {
+            background-color: #d0d0d0;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .bubble-left::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-right-color: #d0d0d0;
+            left: -16px;
+            top: 5px;
+        }
+
+        .bubble-right {
+            background-color: #3da1ff;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .bubble-right::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-right-color: #3da1ff;
+            left: -16px;
+            top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>此页面将展示如何使用bot</h1>
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                在QQ私聊或群聊环境中发送“帮助”查看当前的指令列表
+
+            </div>
+        </div>
+    </div>
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                帮助
+
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                当前可用的指令有：
+                <br>
+                &emsp;ba 抽卡模拟器
+                <br>
+                &emsp;help 显示帮助信息
+                <br>
+                &emsp;music 点歌
+                <br>
+                &emsp;reset 删除关于你的记忆
+                <br>
+                &emsp;status 查看运行状态
+                <br>
+                &emsp;thursday 随机疯狂星期四
+                <br>
+                &emsp;今日运势 查看今日运势
+                <br>
+                &emsp;反馈 发送反馈信息给作者
+                <br>
+                &emsp;发病 发病一下
+                <br>
+                &emsp;喜报 生成一张喜报
+                <br>
+                &emsp;天气 天气+空格+城市查天气
+                <br>
+                &emsp;总力 总力战模拟
+                <br>
+                &emsp;悲报 生成一张悲报
+                <br>
+                &emsp;攒钻 青辉石计算器
+                <br>
+                &emsp;攻略 返回Arona的攻略图
+                <br>
+                输入“help 指令名”查看特定指令的语法和使用示例。
+
+            </div>
+        </div>
+    </div>
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                使用“指令”+空格+-h
+                <br>
+                或help+空格+“指令”
+                <br>
+                查看介绍、别名和使用说明
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                攻略 -h
+
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                指令：攻略
+                <br>
+                Arona的攻略图
+                <br>
+                别名：杂图，查询，
+                <br>
+                评测，测评，评分，
+                <br>
+                角评，角色评分。
+                <br>
+                发送“攻略”查看具体使用方法
+                <br>
+                使用示例：
+                <br>
+                攻略 千里眼
+
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                攻略 爱丽丝
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                <img src="/data/alice.PNG" alt="Avatar" width="350" height=auto>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                攻略 国服未来视
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                <img src="/data/qly.png" alt="Avatar" width="350" height=auto>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                攻略、ba、攒钻、总力功能
+                <br>
+                是koishi的插件：ba-plugin
+                <br>
+                这个插件是Alin和Alin群的小伙伴们一起开发的哦   
+                <br>
+                可以去<a href="https://github.com/Alin-sky/koishi-plugin-ba-plugin" target=“_blank”>GitHub</a>上点星哦
+
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                接下来展示一些指令的用法
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                喜报 这样子用
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                <img src="/data/xixixi.PNG" alt="Avatar" width="350" height=auto>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                反馈 爱丽丝厉害
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                反馈信息发送成功！
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                <img src="/data/fk.png" alt="Avatar" width="350">
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                <img src="/data/sensei.jpg" alt="Avatar" width="250">
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                meme
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                指令：meme
+                <br>
+                制作各种沙雕表情包
+                <br>
+                使用指令 “meme list” 查看表情列表
+                <br>
+                别名：memes。
+                <br>
+                可用的子指令有：
+                <br>
+                meme.generate 生成表情包
+                <br>
+                meme.info 表情详情
+                <br>
+                meme.list 表情列表
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                触发指令：“meme generate
+                <br>
+                <关键词 /序号> [...图片/文字]”
+                    <br>
+                    发送指令 “meme info
+                    <br>
+                    <关键词 /序号>” 查看表情参数和预览
+                        <br>
+                        目前支持的表情列表：
+                        <img src="/data/meme.jpg" alt="Avatar" width="350">
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                为了方便调用，我们更改了一些指令的触发的方法
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                表情查询 31
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                表情名：chase_train
+                <br>
+                关键词：追列车, 追火车
+                <br>
+                需要图片数目：1
+                <br>
+                需要文字数目：0
+                <br>
+                表情预览：
+                <br>
+                <img src="/data/meme1.gif" alt="Avatar" width="200">
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                表情制作 31 @AL-1S Alin-Robot
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                <img src="/data/meme2.gif" alt="Avatar" width="200">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+                VITS功能在添加了白名单后，可以通过以下方法使用
+                <br>
+                以星野的vits模型做个示范
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+              say ブルーアーカイブ
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/al1s.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-left">
+                <audio controls>
+                    <source src="/data/vits.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="message">
+            <div class="avatar">
+                <img src="/data/sensei.jpg" alt="Avatar">
+            </div>
+            <div class="bubble-right">
+              以上就是爱丽丝的一些功能的使用方法
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
