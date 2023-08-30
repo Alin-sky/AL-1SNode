@@ -37,7 +37,7 @@
         }
 
         img.context {
-            opacity: 0.5;
+            opacity: 0.55;
             width: 100%;
             position: fixed;
             z-index: -1
@@ -57,7 +57,7 @@
             /* 设置为50% */
             left: 50%;
             transform: translate(-50%, -50%);
-            background: linear-gradient(to right, rgba(255, 0, 0, 0.2),
+            background: linear-gradient(to right bottom, rgba(255, 0, 0, 0.2),
                     rgba(0, 255, 17, 0.2),
                     rgba(0, 255, 242, 0.2),
                     rgba(191, 0, 255, 0.2));
@@ -198,7 +198,7 @@
             height: 50vh;
             border-radius: 55px;
             background:
-                linear-gradient(rgb(255, 202, 202),
+                linear-gradient(to right bottom, rgb(255, 202, 202),
                     rgb(175, 255, 180),
                     rgb(175, 234, 255),
                     rgb(254, 175, 255));
@@ -406,15 +406,18 @@
         <h3>
             &emsp;目前alin有三个bot
             <br>
-            &emsp;爱丽丝一号（群头衔：一号机）
+            &emsp;<li>爱丽丝一号（群头衔：一号机）
             <br>
-            &emsp;爱丽丝二号（群头衔：二号机）
+            &emsp;<li>爱丽丝二号（群头衔：二号机）
             <br>
-            &emsp;key酱（群头衔：key酱）
+            &emsp;<li>key酱（群头衔：key酱）
+            <br>
+            <br>
             <br>
             &emsp;如果群组只需要ba功能请优先考虑key酱
+           
             <br>
-            &emsp;key酱只有ba功能
+            &emsp;key酱只有ba功能 <a href="/data/ind.html"target=“_blank”>详细</a>
             <br>
             <br>
             &emsp;一号机、二号机和key酱一天可以接受两个群聊的入群申请
@@ -431,6 +434,11 @@
             <br>
             &emsp;30人及以下的好友小群申请后可继续保留
             <h2>
+                请注意，一个群一般只允许进一个机器人
+                <br>
+                如果有其他需求请和Alin联系
+                <br>
+                <br>
                 入群申请步骤
                 <br>
                 1.请使用此网页下方的提示框
@@ -441,16 +449,10 @@
                 <br>
                 2.提示框内填写群号
                 <br>
-                3.提示框内说明是需要二号机还是key酱
-                <br>
-
-
-                <br>
-                <br>
-
             </h2>
         </h3>
         <h2>
+            <hr />
             <form action="http://alin.highmore.tk:5000/send_email" method="post">
                 <!-- 选择机器人部分 -->
                 <label for="option">请选择一个机器人：</label>
@@ -575,7 +577,7 @@
                 <br>
                 已经开启AI对话的大群聊也会挑选并关闭
                 <br>
-                这也是为了杜绝键政和风控
+                这也是为了避免键政和风控
                 <br>
             <h3>
                 <details>
@@ -680,12 +682,11 @@
 
 
     <a href="https://github.com/Alin-sky/AL-1SNode" target=“_blank”>
-        <img style="position: absolute; bottom: 30px; right: 10px;"
-            src="https://pngimg.com/uploads/github/github_PNG40.png" width="60" height="60" alt="Fork me on GitHub">
+        <img style="position: absolute; bottom: 40px; right:40px;"
+            src="https://pngimg.com/uploads/github/github_PNG40.png"  width="40" height="40" alt="Fork me on GitHub">
     </a>
-    <div style="position: absolute; bottom: -50px; right: -30px;">
-        <h3>AlinNode-V0.1.4-RC
-        </h3>
+    <div style="position: absolute; bottom: 0px; right: 0px;">
+        <h5>AlinNode-V0.1.6-RC</h5>
     </div>
 
 </body>
