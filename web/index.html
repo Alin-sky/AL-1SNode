@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>AL-1S-web</title>
+    <link rel="icon" href="/data/als.ico" type="image/x-icon">
+    <style>
+        h1 {
+            padding: 1em;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 3.3vw;
+        }
+
+        h2 {
+            padding: 0.5cm;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 30px;
+        }
+
+        h3 {
+            padding: 1cm;
+            margin: 10 auto;
+            font-size: 20px;
+        }
+
+        h4 {
+            text-align: center;
+            margin: 10 auto;
+            font-size: 19px;
+        }
+
+        p.tes {
+            line-height: 1.8em;
+        }
+
+        img.context {
+            opacity: 0.55;
+            width: 100%;
+            position: fixed;
+            z-index: -1
+        }
+
+        summary {
+            text-align: center;
+        }
+
+
+
+
+        #example {
+            border: none;
+            /* 改为固定定位 */
+            top: 9%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(to right bottom, rgba(255, 0, 0, 0.2),
+                    rgba(0, 255, 17, 0.2),
+                    rgba(0, 255, 242, 0.2),
+                    rgba(191, 0, 255, 0.2));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 40px;
+            padding: 5vh;
+            width: 30vw;
+            height: 4vh;
+            position: absolute;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #example1 {
+            position: absolute;
+            top: 26%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 255, 17, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 4vh;
+            width: 30vw;
+            height: 4vh;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        #example2 {
+            position: absolute;
+            /* 改为固定定位 */
+            top: 48%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 234, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 4vh;
+            width: 30vw;
+            height: 4vh;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+
+            z-index: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #example3 {
+
+            box-shadow: 10px 10px rgb(0, 0, 0);
+
+            position: fixed;
+            /* 改为固定定位 */
+            top: 70%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 25, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 4vh;
+            width: 30vw;
+            height: 4vh;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #example4 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 92%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(166, 0, 232, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 4vh;
+            width: 30vw;
+            height: 4vh;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #example5 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 95%;
+            /* 设置为50% */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(117, 107, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(7px);
+            border-radius: 55px;
+            padding: 2vh;
+            width: 35vw;
+            height: 2vh;
+            box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.2);
+            position: absolute;
+            z-index: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /**/
+
+        .box {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 80vw;
+            height: 50vh;
+            border-radius: 55px;
+            background:
+                linear-gradient(to right bottom, rgb(255, 202, 202),
+                    rgb(175, 255, 180),
+                    rgb(175, 234, 255),
+                    rgb(254, 175, 255));
+
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            overflow: auto;
+            /* 向左上方移动一半的宽度和高度 */
+            box-shadow: 0px 0px 600px 40px rgb(39, 39, 39);
+
+        }
+
+        .box1 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 80vw;
+            height: 60vh;
+            border-radius: 55px;
+            background: linear-gradient(rgb(215, 255, 222), rgb(173, 233, 255));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 600px 40px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+            overflow-y: auto;
+            /* 允许垂直滚动 */
+        }
+
+        .box2 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 80vw;
+            height: 70vh;
+            border-radius: 55px;
+            background: linear-gradient(rgb(255, 254, 202), rgb(153, 255, 152));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 6000px 40px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+            overflow-y: auto;
+        }
+
+        .box3 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 80vw;
+            height: 70vh;
+            border-radius: 55px;
+            background: linear-gradient(rgb(255, 202, 202), rgb(255, 253, 152));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 1000px 80px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+            overflow-y: auto;
+        }
+
+        .box4 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 80vw;
+            height: 70vh;
+            border-radius: 55px;
+            background: linear-gradient(rgb(208, 202, 255), rgb(255, 168, 168));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 800px 80px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+            overflow-y: auto;
+        }
+
+        .box5 {
+            position: fixed;
+            /* 改为固定定位 */
+            top: 50%;
+            /* 设置为50% */
+            left: 50%;
+            /* 设置为50% */
+            width: 80vw;
+            height: 50vh;
+            border-radius: 55px;
+            background: linear-gradient(rgb(189, 165, 255), rgb(200, 238, 255));
+            display: none;
+            z-index: 100;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 0px 800px 80px rgb(39, 39, 39);
+            /* 向左上方移动一半的宽度和高度 */
+            overflow-y: auto;
+        }
+
+        .input-style {
+            width: 300px;
+            height: 30px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .button-style {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: rgb(0, 0, 0);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+
+        /*公告*/
+        .announcement {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: fixed;
+            width: 50vw;
+            height: auto;
+            background: linear-gradient(rgb(255, 165, 165), rgb(200, 221, 255));
+            border-radius: 65px;
+            box-shadow: 0px 0px 9999px 9999px rgba(4, 4, 4, 0.6);
+            z-index: 999;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.5s;
+            opacity: 1;
+        }
+
+
+        select {
+            width: 250px;
+            padding: 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #ffffff;
+            font-size: 18px;
+        }
+
+        select:focus {
+            outline: none;
+            box-shadow: 0 10px 50px rgb(37, 208, 255);
+        }
+
+        option {
+            padding: 10px;
+        }
+
+        /* 定义文本内容的样式 */
+        #content {
+            text-align: center;
+            /* 设置为居中对齐 */
+            margin: auto;
+            /* 设置为自动边距 */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img class="context" src="http://alin.highmore.tk:8888" alt="Image">
+
+    <!--注释公告
+
+ -->
+
+    <div id="announcement" class="announcement">
+        <br>
+        <h1>
+            AL-1S网页公告
+        </h1>
+        <h2>
+            目前key酱已恢复
+            <br>
+            三号机ARONA已上线
+            <br>
+            <img src="data/arona.jpg" width="104">
+            <br>
+            入群请求请尽量使用三号机
+        </h2>
+
+        <h5>点击非公告位置关闭</h5>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div id="example">
+        <h1>“爱丽丝”介绍</h1>
+    </div>
+
+    <div id="boxs" class="box">
+        <h2>
+            <img src="/data/als.ico">
+            <br>
+            <br>
+            <p>
+                Alin-Robot是基于
+            <details>
+                <summary><a href="https://koishi.chat/zh-CN/" target=“_blank”>koishi</a></summary>
+                <p>
+                    选择koishi的原因是koishi的
+                    <br>
+                    可视化和插件管理十分优秀
+                    <br>
+                    以及现在我们是koishi插件的开发人员
+                    <br>
+                    还有就是部署者Alin事东方厨www
+                </p>
+            </details>
+            机器人架构的QQ机器人
+            <br>
+
+            <br>
+            使用了《Blue Archive》游戏中的角色“爱丽丝”的人设、昵称和头像
+            <br>
+            <br>
+            目前爱丽丝的功能有很多，可以去
+            <a href="/data/ind.html" target=“_blank”>这个链接</a>
+            查看功能的使用说明
+            <br>
+            -----------------运行情况介绍-----------------
+            <br>
+            目前所有机器都人运行在自建的服务器上面
+            <br>
+            由Alin和Mulsd运维
+            <br>
+            机器人无法响应的常见情况可以查看<a href="data/index1.html" target=“_blank”>这个界面</a>
+            <br>
+            <br>
+            -----------------其他内容-----------------
+            <br>
+            QQ机器人部署指南（施工中）
+
+
+
+            </p>
+
+
+
+            <br>
+        </h2>
+    </div>
+
+
+
+    <div id="example1">
+        <h1 {text-align:center;}>入群须知</h1>
+    </div>
+    <div id="boxs1" class="box1">
+        <h2>机器人入群须知和导航
+            <br>
+            <a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=aZVGRNySp_XTj1lV-W-LPyr7sAnmZve5&authKey=AxaJ7PbDozpRhH6eArKgLT0VoOOQrOWA5V7pRoiwGFf8atZ8HHsbWqMSVXy5xCCu&noverify=0&group_code=861755038"
+                target=“_blank”>有问题可以来爱丽丝の家哟</a>
+        </h2>
+        <h3>
+            &emsp;目前alin有四个bot：
+            <br>
+            <li>爱丽丝一号（群头衔：一号机）
+                <br>
+                &emsp;
+            <li>爱丽丝二号（群头衔：二号机）
+                <br>
+                &emsp;
+            <li><a href="/data/ind.html" target=“_blank”>三号机ARONA</a>（群头衔：三号机）
+                <br>
+                &emsp;
+            <li>key酱（群头衔：key酱）
+                <br>
+                <br>
+                <br>
+                &emsp;如果群组只需要ba功能请优先考虑key酱
+
+                <br>
+                &emsp;key酱只有ba功能 <a href="/data/ind.html" target=“_blank”>详细</a>
+                <br>
+                <br>
+                &emsp;一号机、二号机、三号机和key酱
+                <br>
+                &emsp;每个一天可以接受两个群聊的入群申请
+                <br>
+                &emsp;非ba群恕不接受入群
+                <br>
+                &emsp;机器人不接受非ba群的入群申请
+                <br>
+                &emsp;并会主动从非ba群群聊退出。
+                <br>
+                &emsp;这么做是为了减少流量和排除不稳定因素。
+                <br>
+                &emsp;带来的不便请谅解
+                <br>
+                &emsp;30人及以下的非ba好友小群可申请后使用机器人
+                <h2 style="color : red;">*一般情况一个群只允许进一个机器人*</h2>
+                <h2>
+                    <br>
+                    如果有其他需求请和Alin联系
+                    <br>
+                    <br>
+                    入群申请步骤：
+                    <br>
+                    1.请使用此网页下方的提示框
+                    <br>
+                    或与部署者Alin联系
+                    <br>
+                    (1549641467@qq.com)
+                    <br>
+                    2.提示框内填写群号
+                    <br>
+                </h2>
+        </h3>
+        <h2>
+            <hr />
+            <form action="http://alin.highmore.tk:5000/send_email" method="post">
+                <label for="option">请选择一个选项：</label>
+                <br>
+                <select name="option" id="option">
+                    <!--定义一个默认的空选项-->
+                    <option value="" selected></option>
+                    <option value="option1">一号机</option>
+                    <option value="option2">二号机</option>
+                    <option value="option3">三号机</option>
+                    <option value="option4">key酱</option>
+                </select>
+                <br>
+
+
+                <!-- 输入群号部分 -->
+                <label for="message">请输入你要拉入群的群号 :</label>
+                <h2 style="color : red;">*记得开启群可被搜索*</h2>
+                <br>
+                <input class="input-style" type="text" id="message" name="message">
+                <br>
+                <input class="button-style" type="submit" value="提交">
+            </form>
+        </h2>
+    </div>
+
+
+
+    <div id="example2">
+        <h1 {text-align:center;}>VITS语音合成</h1>
+    </div>
+    <div id="boxs2" class="box2">
+        <h2>
+            VITS语音合成须知
+            <h3> &emsp;爱丽丝的vits语音合成已开启群组白名单模式。
+                <br>
+                &emsp;非白名单内的群组无法使用此功能
+                <br>
+                &emsp;请阅读完此帖，应该可以解答你的疑惑和需求
+                <br>
+                &emsp;vits支持了更多角色的语音模型啦，一周七天，每天更换一个角色语音模型哦
+                <br>
+                &emsp;周一：爱丽丝
+                <br>
+                &emsp;周二：阿罗娜
+                <br>
+                &emsp;周三：白子
+                <br>
+                &emsp;周四：mika
+                <br>
+                &emsp;周五：星野
+                <br>
+                &emsp;周六：小桃
+                <br>
+                &emsp;周天：日奈
+                <br>
+                &emsp;之后可能会更换角色
+                <br>
+                <details>
+                    <summary>
+                        <h2>※免责声明※<h2>
+                    </summary>
+                    <p>
+
+                        <br>
+                        为避免可能的法律纠纷和道德风险，使用者在使用该功能前，请务必仔细阅读本条款并同意本声明。
+                        <br>
+                        使用者使用该功能的行为以及通过各类方式利用该功能的行为，都将被视作是对本声明全部内容的无异议的认可。
+                        <br>
+                        禁止将此功能用于商用、血腥内容、政治内容、暴力内容、性相关内容、敏感话题内容、不健康内容、或侵犯他人合法权利的用途。
+                        <br>
+                        使用此功能产出和传输的信息需符合中国法律、国际公约的规定、符合公序良俗。不将此功能以及与之相关的服务用作非法用途以及非正当用途。
+                        <br>
+                        禁止宣传此功能生成的带有恶意、政治、血腥、色情、敏感话题的内容
+                        <br>
+                        对于使用者行为及所产生的任何纠纷，部署者 、Koishi 及 koishi-plugin-open-vits 概不负责
+                    </p>
+                </details>
+
+            </h3>
+            <h2>
+                申请方法：
+                <br>
+                仔细阅读并熟知免责声明后
+                <br>
+                <form action="http://alin.highmore.tk:5000/send_email" method="post">
+                    <label for="message">请填写
+                        <br>
+                        <u>你要开启vits语音合成的群号</u>:
+                        <br>
+
+
+                    </label>
+                    <h2 style="color : red;">*记得开启群可被搜索*</h2>
+                    <br>
+                    <input class="input-style" type="text" id="message" name="message"><br>
+                    <input class="button-style" type="submit" value="提交">
+
+                </form>
+            </h2>
+            </p>
+
+            </p>
+
+
+        </h2>
+    </div>
+
+
+
+    <div id="example3">
+        <h1 {text-align:center;}>GPT AI对话</h1>
+    </div>
+    <div id="boxs3" class="box3">
+        <h2>
+            <p>
+                Chat GPT相关
+                <br>
+                首先很遗憾的告诉大家😿可能是因为AI对话插件设计的问题，
+                <br>
+                在聊天过于频繁的时候会触发429报错，很影响大家使用体验。
+                <br>
+                所以，从2023年8月15日起不再接受新群聊开启AI对话的申请😭😭😭
+                <br>
+                已经开启AI对话的大群聊也会挑选并关闭
+                <br>
+                这也是为了避免键政和风控
+                <br>
+            <h3>
+                <details>
+                    &emsp;<summary>GPT对话说明</summary>
+                    <p>
+                        &emsp;chat GPT插件给AI写入了一个爱丽丝的人设。
+                        <br>
+                        &emsp;爱丽丝是《Blue Archive》游戏里的角色“爱丽丝”。
+                        <br>
+                        &emsp;因此给chat GPT写了一个模仿爱丽丝的人设。
+                        <br>
+                        &emsp;私聊发送任何非指令内容都会触发这个插件
+                        <br>
+                        &emsp;群聊发送任何带有“爱丽丝”的文字都会触发这个插件。
+                        <br>
+                        &emsp;如果嫌烦群聊中可以使用同音字。
+                        <br>
+                        &emsp;如爱丽斯、艾丽斯、爱莉丝。als等名字来规避触发。
+                        <br>
+                        &emsp;chat GTP具有强大的对话功能。但回答的内容不可一味相信。
+                        <br>
+                        &emsp;“chat GPT可以保证有答案。但不保证答案正确”。
+                        <br>
+                        &emsp;chat GPT使用了大量维基百科的知识来训练。内容都没有也不可能经过国内审核。
+                        <br>
+                        &emsp;所以千万不要问机器人任何与zg政治、赚钱之类的问题。
+                        <br>
+                        &emsp;AI极有可能瞎说些敏感问题而导致QQ账号封禁。
+                        <br>
+                        &emsp;open AI的chat GPT服务拥有的使用额度有限。
+                        <br>
+                        &emsp;在使用中有可能会出现403错误。一般情况下是没有额度了。
+                        <br>
+                        &emsp;阿林会想办法来补充使用额度的
+                        <br>
+                        &emsp;chat GPT在多次对话后会爆缓存。会出现无法对话的情况。并报错429或者400
+                        <br>
+                        &emsp;这时候需要发送“重置”清空对话记录和缓存
+                    </p>
+                </details>
+
+            </h3>
+            </p>
+
+
+        </h2>
+    </div>
+
+
+
+    <div id="example4">
+        <h1 {text-align:center;}>赞助</h1>
+    </div>
+    <div id="boxs4" class="box4">
+        <h2>
+            <br>
+            目前接受爱发电的赞助
+            <br>
+            首先需要大家明确，
+            <br>
+            爱丽丝是开源免费的
+            <br>
+            使用不需要付费
+
+            <details>
+                &emsp;<summary>但是...</summary>
+                <p>
+                <h4>
+                    爱丽丝的服务器是本地的物理机，采购花费了不少钱...
+                    <br>
+                    爱丽丝的AI对话是openAI的apikey，
+                    <br>
+                    过段时间就会消耗完，得去淘宝补充...
+                    <br>
+                    爱丽丝的语音合成是GPU推理的...电费呜呜
+                    <br>
+                    爱丽丝的机器人框架和qsign时不时就炸...得随时盯着维护
+                    <br>
+                    还有电费网费啥啥啥的呜呜...
+                </h4>
+
+                </p>
+            </details>
+        </h2>
+        <h2>
+            <br>
+            如果能给我们打赏,我们会非常感激！！
+            <br>
+            感谢大家的赞助！！！
+            <br>
+            <img src="data/afdian-Alin.jpg" width="304" height="410">
+            <br>
+            <a href="https://afdian.net/a/alin-sky" target=“_blank”>爱发电链接</a>
+            <br>
+            &emsp;
+            <br>
+        </h2>
+
+        </h2>
+    </div>
+
+
+
+    <a href="https://github.com/Alin-sky/AL-1SNode" target=“_blank”>
+        <img style="position: absolute; bottom: 40px; right:40px;"
+            src="https://pngimg.com/uploads/github/github_PNG40.png" width="40" height="40" alt="Fork me on GitHub">
+    </a>
+    <div style="position: absolute; bottom: 0px; right: 0px;">
+        <h5>AlinNode-V0.1.8</h5>
+    </div>
+
+</body>
+<script>
+
+    var boxs = document.getElementById('boxs');
+    var boxs1 = document.getElementById('boxs1');
+    var boxs2 = document.getElementById('boxs2');
+    var boxs3 = document.getElementById('boxs3');
+    var boxs4 = document.getElementById('boxs4');
+    document.getElementById('example').onclick = function (event) {
+        boxs.style.display = 'block';//ooooooooooo
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        announcement.style.display = 'none'
+
+        event.stopPropagation();
+    }
+    document.getElementById('example1').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'block';//ooooooooooo
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        announcement.style.display = 'none'
+        event.stopPropagation();
+    }
+    document.getElementById('example2').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'block';//ooooooooooo
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        announcement.style.display = 'none'
+        event.stopPropagation();
+    }
+    document.getElementById('example3').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'block';//ooooooooooo
+        boxs4.style.display = 'none';
+        announcement.style.display = 'none'
+        event.stopPropagation();
+    }
+    document.getElementById('example4').onclick = function (event) {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'block';//ooooooooooo
+        announcement.style.display = 'none'
+        event.stopPropagation();
+    }
+
+    boxs.onclick = function (event) {
+        event.stopPropagation();
+    }
+    boxs1.onclick = function (event) {
+        event.stopPropagation();
+    }
+    boxs2.onclick = function (event) {
+        event.stopPropagation();
+    }
+    boxs3.onclick = function (event) {
+        event.stopPropagation();
+    }
+    boxs4.onclick = function (event) {
+        event.stopPropagation();
+    }
+    announcement.onclick = function (event) {//公告框
+        event.stopPropagation();
+    }
+
+    document.onclick = function () {
+        boxs.style.display = 'none';
+        boxs1.style.display = 'none';
+        boxs2.style.display = 'none';
+        boxs3.style.display = 'none';
+        boxs4.style.display = 'none';
+        announcement.style.display = 'none'//公告框
+    }
+
+
+
+</script>
