@@ -1,5 +1,5 @@
 # AlinNode
-# 网站地址：http://alin.highmore.tk:3840/
+# 网站地址：http://关掉惹😿😿😿😿
 ## 算是机器人的wiki
 ### 不会写网页瞎写的GPT4写的
 
